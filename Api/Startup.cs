@@ -1,10 +1,13 @@
-﻿using Business;
+﻿using Api.Extensions;
+using Api.Middleware;
+
+using Business;
 
 using DataLayer;
 
 using Infrastructure;
 
-namespace WebApplication1;
+namespace Api;
 
 public class Startup
 {
@@ -20,6 +23,7 @@ public class Startup
 		services.AddDataLayer();
 		services.AddInfrastructure(_configuration);
 		services.AddBusinessLayer();
+		services.AddAuthServices(_configuration);
 
 		services.AddControllers();
 		services.AddEndpointsApiExplorer();
@@ -35,6 +39,7 @@ public class Startup
 		}
 
 		// applicationBuilder.UseHttpsRedirection();
+		applicationBuilder.UseAuthentication();
 		applicationBuilder.UseAuthorization();
 		applicationBuilder.UseGraphQLApi();
 	}

@@ -1,5 +1,8 @@
 ﻿using Business.Entities.Users.Types;
 
+using Common.Models.Response;
+
+using Domain.Models.Users;
 using Domain.Repositories;
 
 using GraphQL.Types;
@@ -12,6 +15,9 @@ public class UserQuery : ObjectGraphType
 	{
 		Name = "Users";
 
-		Field<ListGraphType<UserType>>("usersList", resolve: context => repository.GetList());
+		//FieldAsync<ListGraphType<UserType>>("usersList",
+		//	resolve: async context => new Response<IEnumerable<User>> { Data = await repository.GetList() });
+		FieldAsync<ListGraphType<UserType>>("usersList",
+			resolve: async context => await repository.GetList());
 	}
 }

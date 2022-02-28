@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{9FB215B9-FE51-4927-B561-27A6D6153812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4714E963-0675-4AA4-B700-1AEB97A97BC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{BA9D777A-45B2-497A-9F4E-1B15D81EF473}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA9D777A-45B2-497A-9F4E-1B15D81EF473}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA9D777A-45B2-497A-9F4E-1B15D81EF473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB215B9-FE51-4927-B561-27A6D6153812}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB215B9-FE51-4927-B561-27A6D6153812}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB215B9-FE51-4927-B561-27A6D6153812}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB215B9-FE51-4927-B561-27A6D6153812}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4714E963-0675-4AA4-B700-1AEB97A97BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4714E963-0675-4AA4-B700-1AEB97A97BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4714E963-0675-4AA4-B700-1AEB97A97BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4714E963-0675-4AA4-B700-1AEB97A97BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

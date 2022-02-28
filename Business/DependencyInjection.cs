@@ -14,17 +14,25 @@ public static class DependencyInjection
 
 		services.AddGraphQL(opt => opt.EnableMetrics = false)
 			.AddSystemTextJson()
-			.AddGraphTypes(typeof(DependencyInjection), ServiceLifetime.Scoped);
+			.AddGraphTypes(typeof(DependencyInjection), ServiceLifetime.Scoped)
+			.AddUserContextBuilder(httpContext => new GraphQLUserContext { User = httpContext.User });
 
 		return services;
 	}
 
 	public static IApplicationBuilder UseGraphQLApi(this IApplicationBuilder app)
 	{
+		// app.UseGraphQLAuthentication();
+
 		app.UseGraphQL<AppSchema>();
 
 		app.UseGraphQLPlayground(new PlaygroundOptions());
 
 		return app;
 	}
+
+	// public static IApplicationBuilder UseGraphQLAuthentication(this IApplicationBuilder app,string path = "/graphql")
+	// 	=> app.UseWhen(
+	// 		context => context.Request.Path.StartsWithSegments(path, out var remaining) && string.IsNullOrEmpty(remaining),
+	// 		b => b.UseMiddleware<GraphQLAuthenticationMiddleware>());
 }
